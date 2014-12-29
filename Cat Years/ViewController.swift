@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var humanYearsTextField: UITextField!
     @IBOutlet weak var convertedYearsLabel: UILabel!
     @IBOutlet weak var catsNameTextField: UITextField!
+    @IBOutlet weak var catImageDisplayed: UIImageView!
     
     
     
@@ -30,11 +31,32 @@ class ViewController: UIViewController {
     @IBAction func convertButtonPressed(sender: UIButton) {
         
         let humanYears = Double((humanYearsTextField.text as NSString).doubleValue)
-        let convertConstant:Double = 7.5
         
-        convertedYearsLabel.text = "\(catsNameTextField.text) is " + "\(humanYears * convertConstant)" + " cat years old."
+        if humanYears < 1 {
+            convertedYearsLabel.text = "Please enter a valid age."
+        }
+        
+        else if humanYears == 1 {
+            
+            convertedYearsLabel.text = "\(catsNameTextField.text) is " + "15 catyears old."
+        }
+        
+        else if humanYears == 2 {
+            convertedYearsLabel.text = "\(catsNameTextField.text) is " + "24 catyears old."
+        }
+        
+        else {
+            let baseage = 24
+            let multiplier = humanYears - 2
+            let convertconstant = 4
+            
+            convertedYearsLabel.text = "\(catsNameTextField.text) is " + "\(Double(baseage) + (multiplier * Double(convertconstant))) catyears old."
+        }
+        
+        
         humanYearsTextField.resignFirstResponder()
         humanYearsTextField.text = ""
+        catsNameTextField.text = ""
         convertedYearsLabel.hidden = false
     }
 

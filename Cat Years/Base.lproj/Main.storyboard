@@ -92,6 +92,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="catImageDisplayed" destination="Ygc-dW-dAx" id="odq-5s-Yx8"/>
                         <outlet property="catsNameTextField" destination="gv5-zg-dhI" id="9OX-X0-yeR"/>
                         <outlet property="convertedYearsLabel" destination="s1h-Eq-aEH" id="PPK-cF-yYc"/>
                         <outlet property="humanYearsTextField" destination="YAL-9Y-Wa7" id="C5s-kb-1Ct"/>
